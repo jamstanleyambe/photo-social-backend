@@ -27,10 +27,7 @@ app.use(Cors())
 
 //API Endpoints
 
-mongoose.connect(connection_url, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+
 mongoose.connection.once('open', () => {
     console.log('DB Connected')
     const changeStream = mongoose.connection.collection('posts').watch()
